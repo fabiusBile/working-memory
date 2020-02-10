@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Тестирование рабочей памяти</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+    <div data-bind="template: { name: currentView}"></div>
+
+    <script type="text/html" id="introduction-view">
+        <h1>Тест рабочей памяти</h1>
+        <p>
+            Вам необходимо подсчитать количество кругов на каждом изображении и запомнить его. <br>
+            После появления всех изображений, необходимо воспроизвести количество кругов <br>
+            на каждом изображении в порядке их появления.
+        </p>
+        <center>
+            <button data-bind="click: startTest">Начать тест</button>
+        </center>
+    </script>
+    <script type="text/html" id="trial-view">
+        <div id="shapes" data-bind="with: currentTrial">
+            <!--ko foreach: shapes-->
+                <div data-bind="class: name, style: {'left': posX()+'%', 'top': posY()+'%'}",  class="shape"></div>
+            <!--/ko-->
+        </div>
+    </script>
+    <script type="text/html" id="end-view">
+        <form data-bind="with: endForm">
+            <h2>Укажите ваше имя</h2>
+            <label>Имя:</label>
+            <input required type="text" data-bind="value: userName, enable: isEnabled">
+
+            <h2>
+                Укажите количество кругов, которое вы видели на каждом изображении.
+            </h2>
+
+            <!--ko foreach: rows-->
+                <label data-bind="text: index"></label>:
+                <input type="number" min="0" data-bind="value: value, enable: $parent.isEnabled">
+                <br>
+                <br>
+            <!--/ko-->
+            <input type="submit" data-bind="click: sendForm, enable: isEnabled" value="Отправить  результаты">
+        </form>
+    </script>
+
+    <script src="./knockout-3.5.1.js"></script>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <script src="./scripts.js"></script>
+</body>
+
+</html>

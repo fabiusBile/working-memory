@@ -1,0 +1,23 @@
+#shapes {
+  position: relative;
+  height: 100vh;
+  background: lightgrey;
+}
+
+#shapes .shape {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.7;
+}
+
+#shapes .shape.circle {
+  background-image: url("circle.png");
+}
+
+#shapes .shape.square {
+  background-image: url("square.png");
+}
+/*# sourceMappingURL=styles.css.map */
