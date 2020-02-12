@@ -2,7 +2,7 @@ const introductionView = "introduction-view";
 const trialView = "trial-view";
 const endView = "end-view";
 const apiUrl = "https://script.google.com/macros/s/AKfycbzNCSVjLgZCK1gWXxJqd6ylVBFGOo9S7wvAHSVUfdPrj2RSjWA/exec";
-  
+
 const delaySeconds = 3;
 
 const trialsList = [
@@ -46,7 +46,7 @@ class FormVm {
         let rows =  trialsList.map((e,i) => {
           return  {
                 index:i,
-                value: ko.observable(0)
+                value: ko.observable()
             }
         })
         this.trialsList = trialsList.map(e => e.circles);
