@@ -1,3 +1,22 @@
+.shape {
+  width: 30px;
+  height: 30px;
+  opacity: 0.7;
+}
+
+.shape.circle {
+  background: red;
+  border-radius: 360px;
+}
+
+.shape.circle-inline {
+  display: inline-block;
+}
+
+.shape.square {
+  background: blue;
+}
+
 #shapes {
   position: relative;
   height: 100vh;
@@ -6,18 +25,5 @@
 
 #shapes .shape {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  background-position: center;
-  background-size: contain;
-  opacity: 0.7;
-}
-
-#shapes .shape.circle {
-  background-image: url("circle.png");
-}
-
-#shapes .shape.square {
-  background-image: url("square.png");
 }
 /*# sourceMappingURL=styles.css.map */
